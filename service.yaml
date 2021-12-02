@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: farhanday2-service
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+spec:
+  selector:
+    app: farhanday2-pod
+  ports:
+  - port: 5000
+    targetPort: 5000
+  type: LoadBalancer
